@@ -7,18 +7,20 @@ include(CXXhelpers)
 include(GNUInstallDirs)
 
 
-if (CMAKE_OSX_ARCHITECTURES)
-    if(CMAKE_OSX_SYSROOT MATCHES ".*iphoneos.*")
-        # RtAudio is not portable to ios currently
-        option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" OFF)
-    else()
-        option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" ON)
-    endif()
-else()
-    option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" ON)
-endif()
-
+# if (CMAKE_OSX_ARCHITECTURES)
+#     if(CMAKE_OSX_SYSROOT MATCHES ".*iphoneos.*")
+#         # RtAudio is not portable to ios currently
+#         option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" OFF)
+#     else()
+#         option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" ON)
+#     endif()
+# else()
+#     option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" ON)
+# endif()
+option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" OFF)
 #-------------------------------------------------------------------------------
+
+set(LIBRARY_OUTPUT_PATH ${IDE_LIBRARY_PATH})
 
 # libopus
 
