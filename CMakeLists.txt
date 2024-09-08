@@ -22,6 +22,8 @@ option(LIBNYQUIST_BUILD_EXAMPLE "Build example application" OFF)
 
 set(LIBRARY_OUTPUT_PATH ${IDE_LIBRARY_PATH})
 
+message(STATUS "LIBRARY_OUTPUT_PATH:       ${LIBRARY_OUTPUT_PATH}")
+
 # libopus
 
 if (BUILD_LIBOPUS)
